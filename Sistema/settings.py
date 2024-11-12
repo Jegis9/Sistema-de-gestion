@@ -114,15 +114,15 @@ WSGI_APPLICATION = 'Sistema.wsgi.application'
 
 # DATABASES = MYSQL
 # DATABASES["default"] = dj_database_url.parse("postgresql://databaserenderbomberos_user:3QvDV6nAvDabKK3wkxmeGKUvZL5J5QvA@dpg-csm1ag8gph6c73abbvi0-a.oregon-postgres.render.com/databaserenderbomberos")
+
 import dj_database_url
 from decouple import config
+import os
 
-
-database_url = os.environ.get("DATABASE_URL")
+database_url = config("DATABASE_URL")  # Asegúrate de cargar la variable desde el archivo .env
 DATABASES = {
     'default': dj_database_url.parse(database_url)
 }
-
 
 
 
