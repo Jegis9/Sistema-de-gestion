@@ -22,8 +22,7 @@
     class="row mt-4 shadow p-3 mb-5 bg-body-tertiary rounded border border-secondary"
   >
     <div>
-      {%block body %} {% if unidades_km %} {% for unidad, km in
-      unidades_km.items %}
+      {% if unidades_km %} {% for unidad, km in unidades_km.items %}
       <div class="unidad-container">
         <p>
           Unidad: {{ unidad }} - Kilómetros recorridos desde último
