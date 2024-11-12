@@ -117,34 +117,11 @@ WSGI_APPLICATION = 'Sistema.wsgi.application'
 import dj_database_url
 from decouple import config
 
-# DATABASES = {
-#     'default': dj_database_url.parse(
-#         config('DATABASE_URL')  # 'postgresql://user:password@host:port/database'
-#     )
-# }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'pruebaBMT',
-#         'USER': 'postgres',
-#         'PASSWORD': 'admin123',
-#         'HOST': 'localhost',
-#         'PORT': '5432',  # Puedes establecer un valor por defecto
-#     }
-# }
-
-# database_url = os.environ.get("DATABASE_URL")
-# DATABASES = {
-#     'default': dj_database_url.parse(database_url)
-# }
-
-
-# import dj_database_url
-
-# DATABASES = {
-#     'default': dj_database_url.config(default='')
-# }
+database_url = os.environ.get("DATABASE_URL")
+DATABASES = {
+    'default': dj_database_url.parse(database_url)
+}
 
 
 
