@@ -143,7 +143,7 @@ def ajustar_stock(request, codigo):
                 subject = f"Advertencia: Bajo stock del insumo {insumo.nombre}",
                 message = f"El insumo {insumo.nombre} tiene un stock actual de {insumo.stock_actual}. Por favor, revisa el inventario.",
                 from_email='bomberosmunicipalestotonicapan@gmail.com',  # Cambia por el correo al que quieres enviar
-                recipient_list=['forniteb6@gmail.com'],
+                recipient_list=['elfegohdeleons@gmail.com'],
                 fail_silently=False,
                 
                 )

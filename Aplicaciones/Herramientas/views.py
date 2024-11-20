@@ -51,7 +51,7 @@ def herramienta(request):
                 subject='Nuevo mantenimiento registrado',
                 message=f'Se ha registrado un nuevo mantenimiento para la herramienta {herramienta.nombre}. Descripción: {descripcion}. Fecha de mantenimiento: {tiempo_mantenimiento}.',
                 from_email='bomberosmunicipalestotonicapan@gmail.com',  # Asegúrate de que coincida con tu configuración
-                recipient_list=['forniteb6@gmail.com'],  # Reemplaza con la dirección de correo del destinatario
+                recipient_list=['elfegohdeleons@gmail.com'],  # Reemplaza con la dirección de correo del destinatario
                 fail_silently=False,
             )
 

@@ -75,7 +75,7 @@ def mantenimientoVehiculos(request, vehiculo_id):
             subject=asunto,
             message=mensaje,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=['forniteb6@gmail.com'],  # Reemplaza con el correo de destino
+            recipient_list=['elfegohdeleons@gmail.com'],  # Reemplaza con el correo de destino
             fail_silently=False,
         )
         

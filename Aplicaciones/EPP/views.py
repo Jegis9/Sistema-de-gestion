@@ -120,7 +120,7 @@ def estadoEPP(request, asignado_id):
                 subject='Nuevo Reporte de Estado de EPP',
                 message=mensaje_correo,
                 from_email='bomberosmunicipalestotonicapan@gmail.com',  # Asegúrate de que coincida con tu configuración
-                recipient_list=['forniteb6@gmail.com'],  # Reemplaza con la dirección de correo del destinatario
+                recipient_list=['elfegohdeleons@gmail.com'],  # Reemplaza con la dirección de correo del destinatario
                 fail_silently=False,
             )
             
