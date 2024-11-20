@@ -394,7 +394,7 @@ def alertas(request):
                 f"Alerta: la unidad {unidad} necesita mantenimiento. Kilómetros desde último mantenimiento: {km_desde_mantenimiento}."
             )
     
-    return render(request, 'vista_kilometraje.html', {
+    return render(request, 'km.html', {
         'unidades_km': unidades_km,
     })
 

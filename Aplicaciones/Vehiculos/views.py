@@ -13,7 +13,7 @@ from django.core.exceptions import PermissionDenied
 from django.core.mail import send_mail
 from django.utils import timezone
 from Aplicaciones.user.models import Profile
-
+from django.conf import settings
 # Funciones auxiliares para verificar permisos
 def is_admin(user):
     return user.groups.filter(name='Administrador').exists()
@@ -61,7 +61,25 @@ def mantenimientoVehiculos(request, vehiculo_id):
 
         Mantenimiento.objects.create(vehiculo=vehiculo, estado=estado, descripcion=descripcion)
 
-
+        # Enviar correo electrónico
+        asunto = f'Nuevo mantenimiento registrado - Vehículo {vehiculo.placas}'
+        mensaje = f"""
+        Se ha registrado un nuevo mantenimiento:
+        
+        Vehículo: {vehiculo.placas}
+        Estado: {'Activo' if estado else 'Inactivo'}
+        Descripción: {descripcion}
+        """
+        
+        send_mail(
+            subject=asunto,
+            message=mensaje,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=['forniteb6@gmail.com'],  # Reemplaza con el correo de destino
+            fail_silently=False,
+        )
+        
+        
         
         messages.success(request, "El vehículo ha sido reportado.")
         return redirect('vehiculos')
